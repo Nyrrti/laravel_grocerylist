@@ -26,11 +26,16 @@ class ItemController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created item in storage.
      */
     public function store(Request $request)
     {
-        //
+        $item = new Item();
+        $item->name = $request->input('name');
+        $item->description = $request->input('description');
+        $item->save();
+
+        return redirect()->route('items.index');
     }
 
     /**
@@ -58,10 +63,13 @@ class ItemController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified item from storage.
+     * 
+     * @param \App\Models\Item $item
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(string $id)
-    {
-        //
+    public function destroy(Item $item) {
+        $item->delete();
+        return redirect()->route('items.index');
     }
 }

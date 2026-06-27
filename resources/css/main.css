@@ -11,7 +11,7 @@
     --color-medium-grey: #b5b5b5;
     
     --font-color-light: #fff;
-    --font-color-dark: #2e3131;
+    --font-color-dark: #292c2c;
     --font-color-medium: #45424c;
     --font-color-title-light: #ff9f55;
     --font-color-title-dark: #ef6d0a;
@@ -186,27 +186,26 @@ li.nav {
 
 .btn {
     font-family: var(--font-family-title);
-    background-color: var(--color-cyan);
+    background-color: var(--color-dark-green);
     color: var(--font-color-light);
     border: 0px;
     border-radius: 1.5rem;
     font-size: var(--font-size-xsm);
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 1.25rem;
     margin: 0.25rem 0rem;
 }
 
 .btn:hover {
-    background-color: color-mix(in srgb, var(--color-cyan) 80%, black);
+    background-color: color-mix(in srgb, var(--color-dark-green) 80%, black);
 }
 
 .btn.back {
-    background-color: var(--color-cyan);
+    background-color: var(--color-orange);
     color: var(--font-color-light);
-    padding: 0.5rem 1rem;
 }
 
 .btn.back:hover {
-   background-color: color-mix(in srgb, var(--color-cyan) 85%, black); 
+   background-color: color-mix(in srgb, var(--color-orange) 85%, black); 
    color: var(--font-color-light);
 }
 
@@ -226,7 +225,7 @@ li.nav {
 }
 
 .btn.add {
-    background-color: var(--hover-color-purple);
+    background-color: var(--color-dark-green);
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     text-transform: uppercase;
@@ -234,7 +233,7 @@ li.nav {
 
 .btn.add:hover {
     background-color: color-mix(in srgb, var(--color-purple) 90%, black);
-    color: var(--color-yellow);
+    color: var(--color-dark-green);
 }
 
 .btn.delete {
@@ -335,6 +334,16 @@ label {
     border: 1px solid var(--color-linen-darker);
 }
 
+input {
+    background-color: var(--bg-color-white);
+    border: 1px solid var(--color-medium-grey);
+}
+
+textarea {
+    background-color: var(--bg-color-white);
+    border: 1px solid var(--color-medium-grey);
+}
+
 th.table-title {
     background-color: var(--color-dark-green);
     font-size: var(--font-size-sm);
@@ -344,12 +353,12 @@ th.table-title {
 
 th {
     text-align: left;
-    padding: 0.5rem 0.5rem;
+    padding: 0.75rem 0.75rem;
 }
 
 td {
     text-align: left;
-    padding: 0.5rem;
+    padding: 0.5rem 0.75rem;
 }
 
 td.border-bottom {
@@ -365,7 +374,7 @@ tbody tr:nth-child(even) {
 }
 
 tbody tr:hover {
-    background-color: color-mix(in srgb, var(--color-light-grey) 85%, rgb(39, 28, 5));
+    background-color: #afcca8;
 }
 
 tfoot {

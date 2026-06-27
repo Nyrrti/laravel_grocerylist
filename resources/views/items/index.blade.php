@@ -17,8 +17,7 @@
                         <h2 class="text-center dark-orange m-0">
                             Items
                         </h2>
-                    </th>
-                    
+                    </th>   
                 </tr>
                 <tr>
                     <th class="table-title">
@@ -51,7 +50,7 @@
                             <form action="{{ route('items.destroy', $item->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit">Verwijderen</button>
+                                <button type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>
