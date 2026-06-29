@@ -18,7 +18,7 @@
                 <label for="description">Description:</label>
                 <textarea class="mb-3" id="description" name="description"></textarea>
                 <label for="category">Categorie:</label>
-                <select name="category_id" id="category" required>
+                <select class="mb-3" name="category_id" id="category" required>
                     @foreach($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach

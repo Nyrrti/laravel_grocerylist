@@ -10,7 +10,7 @@
                 Back
             </a>
         </div>
-        <form action="{{ route('items.update', $item->id) }}" method="POST">
+        <form action="{{ route('items.update', $item) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="d-flex flex-column">

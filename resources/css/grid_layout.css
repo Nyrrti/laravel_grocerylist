@@ -110,6 +110,7 @@ td input[type="number"] {
 }
 
 /* Table width utilities */
+.table-w-5 { width: 5%; }
 .table-w-8 { width: 8%; }
 .table-w-10 { width: 10%; }
 .table-w-12 { width: 12%; }

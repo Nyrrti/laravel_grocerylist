@@ -8,14 +8,15 @@
     --color-lighter-orange: #ff862a;
     --color-orange: #ef6d0a;
     --color-cyan: #18b4a4;
-    --color-red: #ba4747;
+    --color-red: #d92222;
     --color-dark-green: #699d4b;
     --color-light-grey: #e5e5e5;
-    --color-medium-grey: #b5b5b5;
+    --color-medium-grey: #bbbbbb;
+    --color-icons: #8d8d8d;
     
     --font-color-light: #fff;
     --font-color-dark: #292c2c;
-    --font-color-medium: #45424c;
+    --font-color-medium: #4f5357;
     --font-color-title-light: #ff9f55;
     --font-color-title-dark: #ef6d0a;
 
@@ -196,6 +197,19 @@ li.nav {
     font-size: var(--font-size-xsm);
     padding: 0.5rem 1.25rem;
     margin: 0rem;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn.icon {
+    width: 1.9rem;
+    height: 1.9rem;
+}
+
+.btn svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  aspect-ratio: 1;
+  pointer-events: none;
 }
 
 .btn:hover {
@@ -214,11 +228,13 @@ li.nav {
 }
 
 .btn.edit {
-    background-color: var(--color-cyan);
+    background-color: transparent;
+    color: var(--color-icons);
+    padding: 0rem;
 }
 
 .btn.edit:hover {
-    background-color: color-mix(in srgb, var(--color-cyan) 85%, black);
+    color: var(--color-cyan);
 }
 
 .btn.add {
@@ -233,11 +249,13 @@ li.nav {
 }
 
 .btn.delete {
-    background-color: var(--color-red);
+    background-color: transparent;
+    color: var(--color-icons);
+    padding: 0rem;
 }
 
 .btn.delete:hover {
-     background-color: color-mix(in srgb, var(--color-red) 80%, black);
+     color: var(--color-red);
 }
 
 .btn:disabled {
@@ -307,8 +325,6 @@ label {
 .main-container {
     background-color: var(--color-light-grey);
     border: 1px solid var(--color-medium-grey);
-    border-radius: 0.75rem;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 4px 8px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .border-page {
@@ -324,6 +340,13 @@ input {
 textarea {
     background-color: var(--bg-color-white);
     border: 1px solid var(--color-medium-grey);
+}
+
+select {
+    background-color: var(--bg-color-white);
+    border: 1px solid var(--color-medium-grey);
+    font-size: var(--font-size-md);
+    padding: 0.35rem;
 }
 
 th.table-title {
@@ -357,6 +380,12 @@ tbody tr:nth-child(even) {
 
 tbody tr:hover {
     background-color: #bbcfb6;
+}
+
+.action-cell-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Extra large devices (extra large laptops and desktops, 2000px and up) */

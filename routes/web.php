@@ -19,15 +19,13 @@ Route::get('/items/create', [ItemController::class, 'create'])->name('items.crea
 Route::post('/items', [ItemController::class, 'store'])->name('items.store');
 
 // GET | Edit item
-Route::get('/items/{id}/edit', [ItemController::class, 'edit'])->name('items.edit');
+Route::get('/items/{item}/edit', [ItemController::class, 'edit'])->name('items.edit');
 
 // PUT | Edit item
 Route::put('/items/{item}', [ItemController::class, 'update'])->name('items.update');
 
 // DELETE | Delete items
-Route::delete('/items/{id}', function () {
-    Route::delete('/items/{item}', [ItemController::class, 'destroy'])->name('items.destroy');
-})->name('items.destroy');
+Route::delete('/items/{item}', [ItemController::class, 'destroy'])->name('items.destroy');
 
 // Redirect to '/items' route
 Route::redirect('/', '/items');
