@@ -41,7 +41,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($items as $item)
+                @forelse($items as $item)
                     <tr>
                         <td class="border-bottom bold">
                             {{ $item->name }}
@@ -64,7 +64,11 @@
                         </td>
                         <td class="border-bottom">
                             <div class="action-cell-wrap">
-                                <form action="{{ route('items.destroy', $item->id) }}" method="POST" aria-label="Delete">
+                                <form action="{{ route('items.destroy', $item->id) }}" 
+                                    method="POST" 
+                                    aria-label="Delete"
+                                    onsubmit="return confirm('Are you sure you want to delete this item?');"
+                                >
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn icon delete" type="submit">
@@ -80,7 +84,13 @@
                             </div>
                         </td>
                     </tr>
-                @endforeach
+                    @empty
+                        <tr>
+                            <td colspan="5" class="border-bottom text-center text-muted py-3">
+                                No items yet. Add your first item to get started.
+                            </td>
+                        </tr>
+                @endforelse
             </tbody>
         </table>
     </div>

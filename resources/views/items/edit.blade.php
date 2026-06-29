@@ -18,8 +18,8 @@
                 <input class="main-field mb-3" type="text" id="name" name="name" value="{{ $item->name }}" required>
                 <label for="description">Description:</label>
                 <textarea class="mb-3" id="description" name="description">{{ $item->description }}</textarea>
-                <label for="category">Categorie:</label>
-                <select name="category_id" id="category" required>
+                <label for="category">Category:</label>
+                <select class="mb-3" name="category_id" id="category" required>
                     @foreach($categories as $category)
                         <option value="{{ $category->id }}" {{ $item->category_id == $category->id ? 'selected' : '' }}>
                             {{ $category->name }}

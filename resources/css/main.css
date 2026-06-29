@@ -165,6 +165,11 @@ a.footer:hover {
     color: var(--font-color-medium);
 }
 
+.text-muted {
+    color: var(--font-color-medium);
+    font-size: var(--font-size-sm);
+}
+
 .nav-bar {
     height:5.5rem;
     background-color: var(--bg-color-white);
@@ -277,15 +282,6 @@ li {
     list-style:none;
 }
 
-.label {
-    font-weight: 600;
-}
-
-label {
-    font-weight: 600;
-    color: var(--font-color-medium);
-}
-
 .shadow {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
@@ -335,9 +331,12 @@ label {
 input {
     background-color: var(--bg-color-white);
     border: 1px solid var(--color-medium-grey);
+    padding: 0.35rem;
 }
 
 textarea {
+    min-height: 6rem;
+    max-height: 20rem;
     background-color: var(--bg-color-white);
     border: 1px solid var(--color-medium-grey);
 }
@@ -379,7 +378,7 @@ tbody tr:nth-child(even) {
 }
 
 tbody tr:hover {
-    background-color: #bbcfb6;
+    background-color: #d4e2d0;
 }
 
 .action-cell-wrap {

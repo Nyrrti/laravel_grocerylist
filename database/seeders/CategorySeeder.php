@@ -14,6 +14,13 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::factory()->count(10)->create();
+        Category::insert([
+            ['name' => 'Meat'],
+            ['name' => 'Dairy'],
+            ['name' => 'Produce'],
+            ['name' => 'Pantry'],
+            ['name' => 'Frozen'],
+            ['name' => 'Beverages'],
+        ]);
     }
 }

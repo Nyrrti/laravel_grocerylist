@@ -20,9 +20,19 @@ class ItemFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->words(2, true),
-            'description' => fake()->sentence(),
-            'category_id' => Category::inRandomOrder()->first()?->id ?? Category::factory(),
+            'name' => fake()->randomElement([
+                'Milk',
+                'Bread',
+                'Eggs',
+                'Chicken Breast',
+                'Rice',
+                'Bananas',
+            ]),
+            'description' => fake()->randomElement([
+                'Fresh and locally sourced',
+                'Daily essential item',
+                'High quality grocery product',
+            ]),
         ];
     }
 }

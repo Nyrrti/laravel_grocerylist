@@ -23,8 +23,8 @@ class StoreItemRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|max:255',
-            'description' => 'nullable',
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
             'category_id' => 'required|exists:categories,id',
         ];
     }

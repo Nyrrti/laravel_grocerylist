@@ -10,7 +10,7 @@
         </div>
         <div class="col-8">
              <ul>
-                <li class="nav"><a href="{{ route('items.index') }}">Item List</a></li>
+                <li class="nav"><a href="{{ route('items.index') }}">Home</a></li>
                 <li class="nav"><a href="{{ route('items.create') }}">Create Item</a></li>
             </ul>
         </div>

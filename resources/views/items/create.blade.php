@@ -17,12 +17,22 @@
                 <input class="main-field mb-3" type="text" id="name" name="name" required>
                 <label for="description">Description:</label>
                 <textarea class="mb-3" id="description" name="description"></textarea>
-                <label for="category">Categorie:</label>
+                <label for="category">Category:</label>
                 <select class="mb-3" name="category_id" id="category" required>
+                    <option value="" disabled selected>
+                        Select a category
+                    </option>
                     @foreach($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        <option value="{{ $category->id }}">
+                            {{ $category->name }}
+                        </option>
                     @endforeach
                 </select>
+                @if($categories->isEmpty())
+                     <p class="text-muted small mb-3">
+                        This demo doesn't include category management. Seed categories to create items.
+                    </p>
+                @endif
             </div>
             <button class="btn" type="submit">Add</button>
         </form>
