@@ -7,17 +7,22 @@
          <table class="border">
             <colgroup>
                 <col class="">
-                <col class="table-w-40">
-                <col class="table-w-15">
-                <col class="table-w-15">
+                <col class="table-w-45">
+                <col class="table-w-12">
+                <col class="table-w-12">
             </colgroup>
             <thead>
                 <tr>
-                    <th class="" colspan="4">
-                        <h2 class="text-center dark-orange m-0">
+                    <th class="py-4" colspan="2">
+                        <h2 class="dark-orange m-0">
                             Items
                         </h2>
-                    </th>   
+                    </th> 
+                    <th class="text-end" colspan="2">
+                        <a class="btn add" href="{{ route('items.create') }}">
+                            Add+
+                        </a>
+                    </th>  
                 </tr>
                 <tr>
                     <th class="table-title">
@@ -26,10 +31,10 @@
                     <th class="table-title">
                         Description:
                     </th>
-                    <th class="table-title">
+                    <th class="table-title text-center">
                         Actions:
                     </th>
-                    <th class="table-title">
+                    <th class="table-title text-center">
                         Actions:
                     </th>
                 </tr>
@@ -43,14 +48,16 @@
                         <td class="border-bottom">
                             {{ $item->description }}
                         </td>
-                        <td class="border-bottom">
-                            Edit/Delete
+                        <td class="border-bottom text-center">
+                            <a class="btn edit" href="{{ route('items.edit', $item->id) }}">
+                                Edit
+                            </a>
                         </td>
-                        <td class="border-bottom">
+                        <td class="border-bottom text-center">
                             <form action="{{ route('items.destroy', $item->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit">Delete</button>
+                                <button class="btn delete" type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>

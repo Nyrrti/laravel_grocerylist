@@ -6,7 +6,9 @@
     <div class="col-6 offset-3 bg-color main-container p-4">
         <div class="d-flex justify-between items-center">
             <h1 class="mb-3">Add New Item</h1>
-            <button class="btn back">Back</button>
+            <a class="btn back" href="{{ route('items.index') }}">
+                Back
+            </a>
         </div>
         <form action="{{ route('items.store') }}" method="POST">
             @csrf

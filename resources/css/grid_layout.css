@@ -32,6 +32,10 @@
     align-content: start;
 }
 
+.top-height {
+    margin-top: 3.5rem;
+}
+
 .row {
   display: grid;
   grid-template-columns: var(--grid-cols);
@@ -108,11 +112,13 @@ td input[type="number"] {
 /* Table width utilities */
 .table-w-8 { width: 8%; }
 .table-w-10 { width: 10%; }
+.table-w-12 { width: 12%; }
 .table-w-15 { width: 15%; }
 .table-w-20 { width: 20%; }
 .table-w-25 { width: 25%; }
 .table-w-30 { width: 30%; }
 .table-w-40 { width: 40%; }
+.table-w-45 { width: 45%; }
 .table-w-50 { width: 50%; }
 .table-w-60 { width: 60%; }
 .table-w-70 { width: 70%; }

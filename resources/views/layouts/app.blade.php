@@ -15,8 +15,8 @@
                 @include('partials.nav')
             </div>
         </div>
-        <div class="grid-container-fluid page-content">
-            <main class="grid-container bg-color max-width full-height shadow p-5">
+        <div class="grid-container-fluid page-content top-height">
+            <main class="grid-container bg-color max-width full-height shadow border-page p-5">
                 @yield('content')
             </main>   
         </div>

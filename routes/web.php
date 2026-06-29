@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
+use App\Models\Item;
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -17,16 +18,11 @@ Route::get('/items/create', [ItemController::class, 'create'])->name('items.crea
 // POST | item
 Route::post('/items', [ItemController::class, 'store'])->name('items.store');
 
+// GET | Edit item
+Route::get('/items/{id}/edit', [ItemController::class, 'edit'])->name('items.edit');
 
-Route::get('/items/{id}', function () {
-
-})->name('items.show');
-Route::get('/items/{id}/edit', function () {
-
-})->name('items.edit');
-Route::put('/items/{id}', function () {
-
-})->name('items.update');
+// PUT | Edit item
+Route::put('/items/{item}', [ItemController::class, 'update'])->name('items.update');
 
 // DELETE | Delete items
 Route::delete('/items/{id}', function () {
