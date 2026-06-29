@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Requests\UpdateItemRequest;
-use Illuminate\Http\Request;
 use App\Models\Item;
+use App\Models\Category;
 
 class ItemController extends Controller
 {
@@ -16,7 +16,7 @@ class ItemController extends Controller
      */
     public function index() 
     {
-        $items = Item::all();
+        $items = Item::with('category')->get();
         return view('items.index', compact('items'));
     }
 
@@ -25,7 +25,8 @@ class ItemController extends Controller
      */
     public function create()
     {
-        return view('items.create');
+        $categories = Category::all();
+        return view('items.create', compact('categories'));
     }
 
     /**
@@ -36,11 +37,7 @@ class ItemController extends Controller
         // Validation requirements(StoreItemRequest)
         $validated = $request->validated();
 
-        $item = new Item();
-
-        $item->name = $validated['name'];
-        $item->description = $validated['description'];
-        $item->save();
+        Item::create($validated);
 
         return redirect()->route('items.index');
     }
@@ -56,11 +53,10 @@ class ItemController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(int $id)
+    public function edit(Item $item)
     {
-        $item = Item::find($id);
-
-        return view('items.edit', compact('item'));
+        $categories = Category::all();
+        return view('items.edit', compact('item', 'categories'));
     }
 
     /**
@@ -69,9 +65,7 @@ class ItemController extends Controller
     public function update(UpdateItemRequest $request, Item $item) 
     {
         $validated = $request->validated();
-        $item->name = $validated['name'];
-        $item->description = $validated['description'];
-        $item->save();
+        $item->update($validated);
         return redirect()->route('items.index');
     }
 
